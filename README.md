@@ -9,11 +9,11 @@
 How to Use
 -------
 
- 1. Install with [npm](https://www.npmjs.com): `npm install @amrkhaled/angular-datetime-picker --save`
+ 1. Install with [npm](https://www.npmjs.com): `npm install @amrkh97/angular-datetime-picker --save`
  2. Add styles.
     If you are using Angular CLI, you can add this to your styles.css: 
     ```css
-    @import "@amrkhaled/angular-datetime-picker/assets/style/picker.min.css";
+    @import "@amrkh97/angular-datetime-picker/assets/style/picker.min.css";
     ``` 
     If you are not using the Angular CLI, you can include the picker.min.css via a ```<link>``` element in your index.html.
  3. Add __OwlDateTimeModule__ and __OwlNativeDateTimeModule__ to your __@NgModule__ like example below
@@ -21,7 +21,7 @@ How to Use
      import { NgModule } from '@angular/core';
      import { BrowserModule } from '@angular/platform-browser';
      import { MyTestApp } from './my-test-app';
-     import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@amrkhaled/angular-datetime-picker';
+     import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@amrkh97/angular-datetime-picker';
 
      @NgModule({
          imports: [
