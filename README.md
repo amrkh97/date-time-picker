@@ -1,8 +1,7 @@
-:date: :clock1: Angular Date/Time Picker
+Angular 18 Date/Time Picker
 ========================
 
-[![npm](https://img.shields.io/npm/v/@danielmoncada/angular-datetime-picker.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/@danielmoncada/angular-datetime-picker)
-[![npm](https://img.shields.io/npm/dm/@danielmoncada/angular-datetime-picker.svg)](https://www.npmjs.com/package/@danielmoncada/angular-datetime-picker)
+[![npm](https://img.shields.io/npm/v/@amrkh97/angular-datetime-picker.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/@amrkh97/angular-datetime-picker)
 
 **The current version of this package supports Angular 18**
 
@@ -16,36 +15,7 @@ How to Use
     @import "@amrkh97/angular-datetime-picker/assets/style/picker.min.css";
     ``` 
     If you are not using the Angular CLI, you can include the picker.min.css via a ```<link>``` element in your index.html.
- 3. Add __OwlDateTimeModule__ and __OwlNativeDateTimeModule__ to your __@NgModule__ like example below
-    ```typescript
-     import { NgModule } from '@angular/core';
-     import { BrowserModule } from '@angular/platform-browser';
-     import { MyTestApp } from './my-test-app';
-     import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@amrkh97/angular-datetime-picker';
-
-     @NgModule({
-         imports: [
-             BrowserModule,
-             OwlDateTimeModule,
-             OwlNativeDateTimeModule,
-         ],
-         declarations: [ MyTestApp ],
-         bootstrap:    [ MyTestApp ]
-     })
-     export class MyTestAppModule {}
-    ```
- 4. Connecting a picker to an input and a trigger.
-    ```html
-    <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time">
-    <owl-date-time #dt1></owl-date-time>
-    ```
-    ```html
-    <input [owlDateTime]="dt2" placeholder="Date Time">
-    <span [owlDateTimeTrigger]="dt2"><i class="fa fa-calendar"></i></span>
-    <owl-date-time #dt2></owl-date-time>
-    ```
-    
-
+ 
 Animation
 -------
 This picker uses angular animations to improve the user experience, 
@@ -68,25 +38,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 export class YourAppModule { }
 ```
 If you prefer to disable animation effect, use `NoopAnimationsModule` instead.
-
-Choose a date implementation
--------
-The date-time picker was built to be date implementation agnostic.
-Developers need to make sure to provide the appropriate pieces for the picker to work with their chosen implementation.
-There are two pre-made modules, users need to import one of them or build your own one (learn more about this from [here](https://danielykpan.github.io/date-time-picker/#locale-formats)).
-
-- `OwlNativeDateTimeModule` - support for native JavaScript Date object
-- `OwlUnixTimestampDateTimeModule` - support for milliseconds since Epoch (number)
-
-##### Date/Time Adapter Extensions
-
-<img src="https://day.js.org/img/logo.png" width="50"/> https://day.js.org/
-- `OwlDayJsDateTimeModule` - support for DayJs
-    - You must install an optional adapater to use this. see [here](https://github.com/danielmoncada/date-time-picker-dayjs-adapter), [npm](https://www.npmjs.com/package/@danielmoncada/angular-datetime-picker-dayjs-adapter)
-
-<img src="https://avatars.githubusercontent.com/u/4129662?s=200&v=4" width="50"/> https://momentjs.com/
-- `OwlMomentDateTimeModule` - support for MomentJs
-    - You must install an optional adapater to use this. see [here](https://github.com/danielmoncada/date-time-picker-moment-adapter), [npm](https://www.npmjs.com/package/@danielmoncada/angular-datetime-picker-moment-adapter)
 
 Properties for `owl-date-time`
 -------
@@ -189,16 +140,11 @@ Dependencies
 -------
 none
 
-Demo
--------
-- Online doc is [here](https://daniel-projects.firebaseapp.com/owlng/date-time-picker)
-- Online demos (StackBlitz) are [here](https://stackblitz.com/edit/angular-vvp849) and [here](https://stackblitz.com/edit/angular-i7ykf5)
-
 License
 -------
 * License: MIT
 
 Author
 -------
-**Maintained and updated by Amr Khaled, forked from Daniel Monoconda & original implementation by Daniel 
+**Maintained and updated by Amr Khaled, forked from Daniel Moncoda & original implementation by Daniel 
 Pan**
