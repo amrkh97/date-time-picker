@@ -2,6 +2,7 @@ Angular 18 Date/Time Picker
 ========================
 
 [![npm](https://img.shields.io/npm/v/@amrkh97/angular-datetime-picker.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/@amrkh97/angular-datetime-picker)
+[![npm](https://img.shields.io/npm/dm/@amrkh97/angular-datetime-picker.svg)](https://www.npmjs.com/package/@amrkh97/angular-datetime-picker)
 
 **The current version of this package supports Angular 18**
 
