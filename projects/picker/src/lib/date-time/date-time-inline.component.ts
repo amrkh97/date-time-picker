@@ -354,7 +354,7 @@ export class OwlDateTimeInlineComponent<T> extends OwlDateTime<T>
     public selectMonth(normalizedMonth: T): void {
         this.monthSelected.emit(normalizedMonth);
     }
-    
+
     /**
      * Emits the selected date
      * */
