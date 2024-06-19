@@ -1,0 +1,111 @@
+{
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "name": "date-time-picker-app",
+  "sourceRoot": "src",
+  "projectType": "application",
+  "prefix": "owl",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "sass"
+    }
+  },
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "aot": true,
+        "outputPath": "dist/date-time-picker-app",
+        "index": "src/index.html",
+        "main": "src/main.ts",
+        "polyfills": "src/polyfills.ts",
+        "tsConfig": "src/tsconfig.app.json",
+        "assets": [
+          "src/favicon.ico",
+          "src/assets"
+        ],
+        "styles": [
+          "src/styles.sass"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "src/environments/environment.ts",
+              "with": "src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "aot": true,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb"
+            }
+          ]
+        }
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "buildTarget": "date-time-picker-app:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "date-time-picker-app:build:production"
+        }
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "date-time-picker-app:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "src/test.ts",
+        "polyfills": "src/polyfills.ts",
+        "tsConfig": "src/tsconfig.spec.json",
+        "karmaConfig": "src/karma.conf.js",
+        "styles": [
+          "src/styles.sass"
+        ],
+        "scripts": [],
+        "assets": [
+          "src/favicon.ico",
+          "src/assets"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@angular-devkit/build-angular:tslint",
+      "options": {
+        "tsConfig": [
+          "src/tsconfig.app.json",
+          "src/tsconfig.spec.json"
+        ],
+        "exclude": [
+          "**/node_modules/**"
+        ]
+      }
+    }
+  }
+}

@@ -43,3 +43,7 @@ Thumbs.db
 .angular
 .cache
 coverage
+
+
+.nx/cache
+.nx/workspace-data

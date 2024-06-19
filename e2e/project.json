@@ -1,0 +1,29 @@
+{
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "name": "date-time-picker-app-e2e",
+  "projectType": "application",
+  "prefix": "",
+  "targets": {
+    "e2e": {
+      "executor": "@angular-devkit/build-angular:protractor",
+      "options": {
+        "protractorConfig": "e2e/protractor.conf.js",
+        "devServerTarget": "date-time-picker-app:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "date-time-picker-app:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@angular-devkit/build-angular:tslint",
+      "options": {
+        "tsConfig": "e2e/tsconfig.e2e.json",
+        "exclude": [
+          "**/node_modules/**"
+        ]
+      }
+    }
+  }
+}
