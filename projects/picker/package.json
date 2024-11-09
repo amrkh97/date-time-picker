@@ -1,6 +1,7 @@
 {
     "name": "@amrkh97/angular-datetime-picker",
-    "version": "1.0.7",
+    "version": "1.0.9",
+    "type": "module",
     "description": "Angular Date Time Picker",
     "keywords": [
         "Angular",

@@ -29,5 +29,6 @@
             "!{projectRoot}/karma.conf.js"
         ]
     },
-    "nxCloudAccessToken": "MjUwNTMyNmMtZGU4Yi00ZjllLWJhZjItNmUwNjFlMTU5ZmVjfHJlYWQtd3JpdGU="
+    "nxCloudAccessToken": "MjUwNTMyNmMtZGU4Yi00ZjllLWJhZjItNmUwNjFlMTU5ZmVjfHJlYWQtd3JpdGU=",
+    "useLegacyCache": true
 }
