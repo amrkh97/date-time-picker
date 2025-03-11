@@ -21,7 +21,8 @@ import { merge, of as observableOf, Subscription } from 'rxjs';
     host: {
         '(click)': 'handleClickOnHost($event)',
         '[class.owl-dt-trigger-disabled]': 'owlDTTriggerDisabledClass'
-    }
+    },
+    standalone: false
 })
 export class OwlDateTimeTriggerDirective<T> implements OnInit, OnChanges, AfterContentInit, OnDestroy {
 

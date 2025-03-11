@@ -6,7 +6,6 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from '../../projects/picke
 const ONE_DAY = 24 * 60 * 60 * 1000;
 
 @Component({
-    standalone: true,
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',

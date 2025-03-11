@@ -28,7 +28,8 @@ import { take } from 'rxjs/operators';
     host: {
         '[class.owl-dt-timer]': 'owlDTTimerClass',
         '[attr.tabindex]': 'owlDTTimeTabIndex'
-    }
+    },
+    standalone: false
 })
 export class OwlTimerComponent<T> implements OnInit {
     /** The current picker moment */

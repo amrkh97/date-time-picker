@@ -51,7 +51,8 @@ const MONTHS_PER_ROW = 3;
         '[class.owl-dt-calendar-view]': 'owlDTCalendarView'
     },
     preserveWhitespaces: false,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OwlYearViewComponent<T>
     implements OnInit, AfterContentInit, OnDestroy {

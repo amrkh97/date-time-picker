@@ -41,6 +41,7 @@ import { OptionsTokens, Options } from './options-provider';
     },
     preserveWhitespaces: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 
 export class OwlMultiYearViewComponent<T> implements OnInit, AfterContentInit {

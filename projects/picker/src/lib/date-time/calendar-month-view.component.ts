@@ -52,7 +52,8 @@ const WEEKS_PER_VIEW = 6;
         '[class.owl-dt-calendar-view]': 'owlDTCalendarView'
     },
     preserveWhitespaces: false,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OwlMonthViewComponent<T>
     implements OnInit, AfterContentInit, OnDestroy {

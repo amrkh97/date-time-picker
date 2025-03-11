@@ -380,7 +380,8 @@ describe('OwlTimerComponent', () => {
                 [minDateTime]="minDateTime"
                 [maxDateTime]="maxDateTime"
                 (selectedChange)="handleSelectedChange($event)"></owl-date-time-timer>
-    `
+    `,
+    standalone: false
 })
 class StandardTimerComponent {
     stepHour = 1;

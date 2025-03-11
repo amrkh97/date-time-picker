@@ -353,7 +353,8 @@ describe('OwlYearViewComponent', () => {
                 [selected]="selected"
                 [(pickerMoment)]="pickerMoment"
                 (change)="handleChange($event)"></owl-date-time-year-view>
-    `
+    `,
+    standalone: false
 })
 class StandardYearViewComponent {
     selected = new Date(2018, JAN, 10);
@@ -369,7 +370,8 @@ class StandardYearViewComponent {
         <owl-date-time-year-view
                 [(pickerMoment)]="pickerMoment"
                 [dateFilter]="dateFilter"></owl-date-time-year-view>
-    `
+    `,
+    standalone: false
 })
 class YearViewWithDateFilterComponent {
     pickerMoment = new Date(2018, JAN, 1);

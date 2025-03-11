@@ -26,7 +26,8 @@ import { debounceTime } from 'rxjs/operators';
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class.owl-dt-timer-box]': 'owlDTTimerBoxClass'
-    }
+    },
+    standalone: false
 })
 
 export class OwlTimerBoxComponent implements OnInit, OnDestroy {

@@ -34,7 +34,8 @@ import {Subscription} from 'rxjs';
         '[class.owl-dt-calendar]': 'owlDTCalendarClass'
     },
     preserveWhitespaces: false,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class OwlCalendarComponent<T>
     implements OnInit, AfterContentInit, AfterViewChecked, OnDestroy {
@@ -300,7 +301,7 @@ export class OwlCalendarComponent<T>
             (!this.maxDate ||
                 this.dateTimeAdapter.compare(date, this.maxDate) <= 0)
         );
-    };
+    }
 
     public ngOnInit() {
     }

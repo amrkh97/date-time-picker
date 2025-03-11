@@ -476,7 +476,8 @@ describe('OwlCalendarComponent', () => {
                 [pickerMoment]="pickerMoment"
                 (monthSelected)="selectedMonth=$event"
                 (yearSelected)="selectedYear=$event"></owl-date-time-calendar>
-    `
+    `,
+    standalone: false
 })
 class StandardCalendarComponent {
     selectMode = 'single';
@@ -492,7 +493,8 @@ class StandardCalendarComponent {
                                 [pickerMoment]="pickerMoment"
                                 [minDate]="minDate"
                                 [maxDate]="maxDate"></owl-date-time-calendar>
-    `
+    `,
+    standalone: false
 })
 class CalendarWithMinMaxComponent {
     selectMode = 'single';
@@ -508,7 +510,8 @@ class CalendarWithMinMaxComponent {
                                 [selectMode]="selectMode"
                                 [pickerMoment]="pickerMoment"
                                 [dateFilter]="dateFilter"></owl-date-time-calendar>
-    `
+    `,
+    standalone: false
 })
 class CalendarWithDateFilterComponent {
     selectMode = 'single';

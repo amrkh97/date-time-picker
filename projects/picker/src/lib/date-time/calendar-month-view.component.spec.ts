@@ -369,7 +369,8 @@ describe('OwlMonthViewComponent', () => {
         <owl-date-time-month-view
                 [(selected)]="selected"
                 [(pickerMoment)]="pickerMoment"></owl-date-time-month-view>
-    `
+    `,
+    standalone: false
 })
 class StandardMonthViewComponent {
     selected = new Date(2018, JAN, 10);
@@ -381,7 +382,8 @@ class StandardMonthViewComponent {
         <owl-date-time-month-view
                 [(pickerMoment)]="pickerMoment"
                 [dateFilter]="dateFilter"></owl-date-time-month-view>
-    `
+    `,
+    standalone: false
 })
 class MonthViewWithDateFilterComponent {
     pickerMoment = new Date(2018, JAN, 1);

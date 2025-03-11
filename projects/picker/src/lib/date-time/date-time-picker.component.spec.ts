@@ -2393,7 +2393,8 @@ describe('OwlDateTimeComponent', () => {
                        [disabled]="disabled"
                        [pickerType]="pickerType"
                        [pickerMode]="pickerMode" #dt></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class StandardDateTimePickerComponent {
     date: Date | null = new Date(2020, JAN, 1);
@@ -2412,7 +2413,8 @@ class StandardDateTimePickerComponent {
         <input [owlDateTime]="dt" [selectMode]="selectMode" [values]="dates">
         <owl-date-time [startAt]="startAt" [endAt]="endAt"
                        [pickerType]="pickerType" #dt></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class RangeDateTimePickerComponent {
      dates: Date[] | null = [new Date(2020, JAN, 1), new Date(2020, FEB, 1)];
@@ -2431,14 +2433,16 @@ class RangeDateTimePickerComponent {
         <input [owlDateTime]="dt">
         <input [owlDateTime]="dt">
         <owl-date-time #dt></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class MultiInputDateTimePickerComponent { }
 
 @Component({
     template: `
         <owl-date-time #dt></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class NoInputDateTimePickerComponent {
     @ViewChild('dt', { static: true })
@@ -2449,7 +2453,8 @@ class NoInputDateTimePickerComponent {
     template: `
         <input [owlDateTime]="dt" [value]="date">
         <owl-date-time #dt [startAt]="startDate"></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class DateTimePickerWithStartAtComponent {
     date = new Date(2020, JAN, 1);
@@ -2464,7 +2469,8 @@ class DateTimePickerWithStartAtComponent {
         <owl-date-time #dt [startView]="startView"
                        (monthSelected)="onMonthSelection()"
                        (yearSelected)="onYearSelection()"></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class DateTimePickerWithStartViewComponent {
     date = new Date(2020, JAN, 1);
@@ -2481,7 +2487,8 @@ class DateTimePickerWithStartViewComponent {
     template: `
         <input [(ngModel)]="moment" [selectMode]="selectMode" [owlDateTime]="dt">
         <owl-date-time #dt></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class DateTimePickerWithNgModelComponent {
     moment: Date[] | Date | null = null;
@@ -2498,7 +2505,8 @@ class DateTimePickerWithNgModelComponent {
                [owlDateTime]="dt"
                [owlDateTimeTrigger]="dt">
         <owl-date-time #dt></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class DateTimePickerWithFormControlComponent {
     formControl = new UntypedFormControl();
@@ -2515,7 +2523,8 @@ class DateTimePickerWithFormControlComponent {
         <input [owlDateTime]="dt">
         <button [owlDateTimeTrigger]="dt">Icon</button>
         <owl-date-time #dt></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class DateTimePickerWithTriggerComponent {
     @ViewChild('dt', { static: true })
@@ -2530,7 +2539,8 @@ class DateTimePickerWithTriggerComponent {
                [owlDateTime]="dt"
                [owlDateTimeTrigger]="dt">
         <owl-date-time [showSecondsTimer]="true" #dt></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class DateTimePickerWithMinAndMaxValidationComponent {
     @ViewChild('dt', { static: true })
@@ -2552,7 +2562,8 @@ class DateTimePickerWithMinAndMaxValidationComponent {
                [owlDateTime]="dt"
                [owlDateTimeTrigger]="dt">
         <owl-date-time [showSecondsTimer]="true" #dt></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class DateTimePickerWithFilterValidationComponent {
     @ViewChild('dt', { static: true })
@@ -2574,7 +2585,8 @@ class DateTimePickerWithFilterValidationComponent {
                (dateTimeChange)="handleDateTimeChange()"
                (dateTimeInput)="handleDateTimeInput()">
         <owl-date-time [showSecondsTimer]="true" #dt></owl-date-time>
-    `
+    `,
+    standalone: false
 })
 class DateTimePickerWithChangeAndInputEventsComponent {
     @ViewChild('dt', { static: true })
@@ -2597,7 +2609,8 @@ class DateTimePickerWithChangeAndInputEventsComponent {
     template: `
     <input [owlDateTime]="dt" [(ngModel)]="value" [min]="min" [max]="max">
     <owl-date-time #dt [startAt]="startAt"></owl-date-time>
-  `
+  `,
+    standalone: false
 })
 class DateTimePickerWithISOStringsComponent {
     value = new Date(2017, JUN, 1).toISOString();
@@ -2614,7 +2627,8 @@ class DateTimePickerWithISOStringsComponent {
     template: `
     <input [(ngModel)]="selected" [owlDateTime]="dt">
     <owl-date-time (afterPickerOpen)="openedSpy()" (afterPickerClosed)="closedSpy()" #dt></owl-date-time>
-  `
+  `,
+    standalone: false
 })
 class DateTimePickerWithEventsComponent {
     selected: Date | null = null;

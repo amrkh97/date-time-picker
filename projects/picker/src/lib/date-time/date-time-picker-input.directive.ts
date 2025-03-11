@@ -67,6 +67,7 @@ export const OWL_DATETIME_VALIDATORS: any = {
         OWL_DATETIME_VALUE_ACCESSOR,
         OWL_DATETIME_VALIDATORS,
     ],
+    standalone: false
 })
 export class OwlDateTimeInputDirective<T>
     implements

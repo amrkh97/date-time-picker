@@ -44,7 +44,8 @@ export const OWL_DATETIME_VALUE_ACCESSOR: any = {
     },
     changeDetection: ChangeDetectionStrategy.OnPush,
     preserveWhitespaces: false,
-    providers: [OWL_DATETIME_VALUE_ACCESSOR]
+    providers: [OWL_DATETIME_VALUE_ACCESSOR],
+    standalone: false
 })
 export class OwlDateTimeInlineComponent<T> extends OwlDateTime<T>
     implements OnInit, ControlValueAccessor {

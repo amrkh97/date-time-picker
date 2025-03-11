@@ -315,7 +315,8 @@ describe('OwlMultiYearViewComponent', () => {
                 [selected]="selected"
                 [(pickerMoment)]="pickerMoment"
                 (change)="handleChange($event)"></owl-date-time-multi-year-view>
-    `
+    `,
+    standalone: false
 })
 class StandardMultiYearViewComponent {
     selected = new Date(2020, JAN, 10);
@@ -331,7 +332,8 @@ class StandardMultiYearViewComponent {
         <owl-date-time-multi-year-view
                 [(pickerMoment)]="pickerMoment"
                 [dateFilter]="dateFilter"></owl-date-time-multi-year-view>
-    `
+    `,
+    standalone: false
 })
 class MultiYearViewWithDateFilterComponent {
     pickerMoment = new Date(2018, JAN, 1);

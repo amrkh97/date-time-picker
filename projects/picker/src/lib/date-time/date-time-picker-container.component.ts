@@ -51,6 +51,7 @@ import {
         '[attr.id]': 'owlDTContainerId',
         '[@transformPicker]': 'owlDTContainerAnimation',
     },
+    standalone: false
 })
 export class OwlDateTimeContainerComponent<T>
     implements OnInit, AfterContentInit, AfterViewInit
