@@ -3,16 +3,17 @@
  */
 
 import {
-    ChangeDetectorRef,
-    Component,
-    ComponentRef,
-    ElementRef,
-    EmbeddedViewRef,
-    EventEmitter,
-    Inject,
-    OnInit,
-    Optional,
-    ViewChild
+  ChangeDetectorRef,
+  Component,
+  ComponentRef,
+  ElementRef,
+  EmbeddedViewRef,
+  EventEmitter,
+  Inject,
+  OnInit,
+  Optional,
+  ViewChild,
+  DOCUMENT
 } from '@angular/core';
 import {
     animate,
@@ -23,7 +24,7 @@ import {
     transition,
     trigger
 } from '@angular/animations';
-import { DOCUMENT } from '@angular/common';
+
 import { FocusTrap, FocusTrapFactory } from '@angular/cdk/a11y';
 import {
     BasePortalOutlet,

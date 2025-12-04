@@ -2,7 +2,8 @@
     "extends": "../tsconfig.base.json",
     "compilerOptions": {
         "outDir": "../out-tsc/app",
-        "types": []
+        "types": [],
+        "moduleResolution": "bundler"
     },
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,
@@ -10,8 +11,5 @@
         "strictTemplates": true,
         "enableIvy": true
     },
-    "files": [
-        "main.ts",
-        "polyfills.ts"
-    ]
+    "files": ["main.ts", "polyfills.ts"]
 }

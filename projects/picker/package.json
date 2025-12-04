@@ -1,6 +1,6 @@
 {
     "name": "@amrkh97/angular-datetime-picker",
-    "version": "19.3.0",
+    "version": "21.0.2",
     "type": "module",
     "description": "Angular Date Time Picker",
     "keywords": [
@@ -25,9 +25,9 @@
         "access": "public"
     },
     "peerDependencies": {
-        "@angular/common": "~19.2.14",
-        "@angular/core": "~19.2.14",
-        "@angular/cdk": "~19.2.0"
+        "@angular/common": "~21",
+        "@angular/core": "~21",
+        "@angular/cdk": "~21"
     },
     "dependencies": {
         "tslib": "^2.8.1"
