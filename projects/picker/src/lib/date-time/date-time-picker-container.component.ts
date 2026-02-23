@@ -9,18 +9,18 @@ import {
     ChangeDetectorRef,
     Component,
     ElementRef,
+    NgZone,
+    OnDestroy,
     OnInit,
     Optional,
     ViewChild,
 } from '@angular/core';
-import { AnimationEvent } from '@angular/animations';
 import { OwlDateTimeIntl } from './date-time-picker-intl.service';
 import { OwlCalendarComponent } from './calendar.component';
 import { OwlTimerComponent } from './timer.component';
 import { DateTimeAdapter } from './adapter/date-time-adapter.class';
 import { OwlDateTime, PickerType } from './date-time.class';
 import { Observable, Subject } from 'rxjs';
-import { owlDateTimePickerAnimations } from './date-time-picker.animations';
 import {
     DOWN_ARROW,
     LEFT_ARROW,
@@ -36,25 +36,19 @@ import {
     styleUrls: ['./date-time-picker-container.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     preserveWhitespaces: false,
-    animations: [
-        owlDateTimePickerAnimations.transformPicker,
-        owlDateTimePickerAnimations.fadeInPicker,
-    ],
     host: {
-        '(@transformPicker.start)': 'handleContainerAnimationStart($event)',
-        '(@transformPicker.done)': 'handleContainerAnimationDone($event)',
         '[class.owl-dt-container]': 'owlDTContainerClass',
         '[class.owl-dt-popup-container]': 'owlDTPopupContainerClass',
         '[class.owl-dt-dialog-container]': 'owlDTDialogContainerClass',
         '[class.owl-dt-inline-container]': 'owlDTInlineContainerClass',
         '[class.owl-dt-container-disabled]': 'owlDTContainerDisabledClass',
         '[attr.id]': 'owlDTContainerId',
-        '[@transformPicker]': 'owlDTContainerAnimation',
+        '[class.owl-dt-container-enter]': 'shouldAnimate',
     },
     standalone: false
 })
 export class OwlDateTimeContainerComponent<T>
-    implements OnInit, AfterContentInit, AfterViewInit
+    implements OnInit, AfterContentInit, AfterViewInit, OnDestroy
 {
     @ViewChild(OwlCalendarComponent)
     calendar: OwlCalendarComponent<T>;
@@ -206,14 +200,18 @@ export class OwlDateTimeContainerComponent<T>
         return this.picker.id;
     }
 
-    get owlDTContainerAnimation(): any {
-        return this.picker.pickerMode === 'inline' ? '' : 'enter';
+    get shouldAnimate(): boolean {
+        return this.picker.pickerMode !== 'inline';
     }
+
+    private animationStartListener: (() => void) | null = null;
+    private animationEndListener: (() => void) | null = null;
 
     constructor(
         private cdRef: ChangeDetectorRef,
         private elmRef: ElementRef,
         private pickerIntl: OwlDateTimeIntl,
+        private ngZone: NgZone,
         @Optional() private dateTimeAdapter: DateTimeAdapter<T>,
     ) {}
 
@@ -238,18 +236,38 @@ export class OwlDateTimeContainerComponent<T>
 
     public ngAfterViewInit(): void {
         this.focusPicker();
-    }
 
-    public handleContainerAnimationStart(event: AnimationEvent): void {
-        const toState = event.toState;
-        if (toState === 'enter') {
+        if (this.picker.pickerMode !== 'inline') {
+            const el = this.elmRef.nativeElement as HTMLElement;
+            this.ngZone.runOutsideAngular(() => {
+                const onAnimationStart = () => {
+                    this.ngZone.run(() => {
+                        this.beforePickerOpened$.next(null);
+                    });
+                };
+                const onAnimationEnd = () => {
+                    this.ngZone.run(() => {
+                        this.pickerOpened$.next(null);
+                    });
+                };
+                el.addEventListener('animationstart', onAnimationStart);
+                el.addEventListener('animationend', onAnimationEnd);
+                this.animationStartListener = () => el.removeEventListener('animationstart', onAnimationStart);
+                this.animationEndListener = () => el.removeEventListener('animationend', onAnimationEnd);
+            });
+        } else {
+            // For inline mode, emit immediately since there is no animation
             this.beforePickerOpened$.next(null);
+            this.pickerOpened$.next(null);
         }
     }
-    public handleContainerAnimationDone(event: AnimationEvent): void {
-        const toState = event.toState;
-        if (toState === 'enter') {
-            this.pickerOpened$.next(null);
+
+    public ngOnDestroy(): void {
+        if (this.animationStartListener) {
+            this.animationStartListener();
+        }
+        if (this.animationEndListener) {
+            this.animationEndListener();
         }
     }
 

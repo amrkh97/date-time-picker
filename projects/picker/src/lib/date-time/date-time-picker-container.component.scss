@@ -1,0 +1,25 @@
+@keyframes owlDtTransformPicker {
+  from { opacity: 0; transform: scale(1, 0); }
+  to   { opacity: 1; transform: scale(1, 1); }
+}
+
+@keyframes owlDtFadeInPicker {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+:host(.owl-dt-container-enter) {
+  animation: owlDtTransformPicker 400ms cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+.owl-dt-container-inner-animate {
+  animation: owlDtFadeInPicker 400ms 100ms cubic-bezier(0.55, 0, 0.55, 0.2) both;
+}
+
+:host(.owl-dt-inline-container) {
+  animation: none;
+
+  .owl-dt-container-inner-animate {
+    animation: none;
+  }
+}

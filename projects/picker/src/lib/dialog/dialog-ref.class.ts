@@ -1,13 +1,13 @@
 /**
  * dialog-ref.class
  */
-import { AnimationEvent } from '@angular/animations';
 import { ESCAPE } from '@angular/cdk/keycodes';
 import { GlobalPositionStrategy, OverlayRef } from '@angular/cdk/overlay';
 import { Location } from '@angular/common';
 import { Observable, Subject, Subscription, SubscriptionLike, filter, take } from 'rxjs';
 import { DialogPosition } from './dialog-config.class';
 import { OwlDialogContainerComponent } from './dialog-container.component';
+import { OwlAnimationEvent } from '../utils/owl-animation-event';
 
 export class OwlDialogRef<T> {
 
@@ -40,7 +40,7 @@ export class OwlDialogRef<T> {
 
         this.container.animationStateChanged
             .pipe(
-                filter(( event: AnimationEvent ) => event.phaseName === 'start' && event.toState === 'enter'),
+                filter(( event: OwlAnimationEvent ) => event.phaseName === 'start' && event.toState === 'enter'),
                 take(1)
             )
             .subscribe(() => {
@@ -50,7 +50,7 @@ export class OwlDialogRef<T> {
 
         this.container.animationStateChanged
             .pipe(
-                filter(( event: AnimationEvent ) => event.phaseName === 'done' && event.toState === 'enter'),
+                filter(( event: OwlAnimationEvent ) => event.phaseName === 'done' && event.toState === 'enter'),
                 take(1)
             )
             .subscribe(() => {
@@ -60,7 +60,7 @@ export class OwlDialogRef<T> {
 
         this.container.animationStateChanged
             .pipe(
-                filter((event: AnimationEvent) => event.phaseName === 'done' && event.toState === 'exit'),
+                filter((event: OwlAnimationEvent) => event.phaseName === 'done' && event.toState === 'exit'),
                 take(1)
             )
             .subscribe(() => {
@@ -89,7 +89,7 @@ export class OwlDialogRef<T> {
 
         this.container.animationStateChanged
             .pipe(
-                filter((event: AnimationEvent) => event.phaseName === 'start'),
+                filter((event: OwlAnimationEvent) => event.phaseName === 'start'),
                 take(1)
             )
             .subscribe(() => {

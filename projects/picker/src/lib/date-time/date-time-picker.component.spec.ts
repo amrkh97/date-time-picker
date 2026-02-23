@@ -19,7 +19,6 @@ import {
 } from '@angular/core';
 import { OwlDateTimeInputDirective } from './date-time-picker-input.directive';
 import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { OwlDateTimeModule } from './date-time.module';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { OwlNativeDateTimeModule } from './adapter/native-date-time.module';
@@ -64,7 +63,6 @@ describe('OwlDateTimeComponent', () => {
             imports: [
                 FormsModule,
                 OwlDateTimeModule,
-                NoopAnimationsModule,
                 ReactiveFormsModule,
                 ...imports
             ],

@@ -19,26 +19,7 @@ How to Use
  
 Animation
 -------
-This picker uses angular animations to improve the user experience, 
-therefore you need to install `@angular/animations` and import `BrowserAnimationsModule` to your application.
-```
-npm install @angular/animations --save
-```
-```typescript
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
-@NgModule({
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        //...
-    ],
-    //...
-})
-export class YourAppModule { }
-```
-If you prefer to disable animation effect, use `NoopAnimationsModule` instead.
+This picker uses CSS animations for smooth visual effects. No additional animation packages or providers are needed — `@angular/animations` is **not** required.
 
 Properties for `owl-date-time`
 -------
